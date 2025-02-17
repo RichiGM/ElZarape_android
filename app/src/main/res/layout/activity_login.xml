@@ -82,7 +82,7 @@
                 android:textColorLink="@color/white" />
 
             <Button
-                android:id="@+id/btnRegistrar"
+                android:id="@+id/btnLogin"
                 android:layout_width="253dp"
                 android:layout_height="match_parent"
                 android:layout_margin="40dp"

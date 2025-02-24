@@ -14,7 +14,9 @@
         android:theme="@style/Theme.ElZarape"
         tools:targetApi="31">
         <activity
-
+            android:name=".view.ActivityAlimentos"
+            android:exported="false"/>
+        <activity
             android:name=".view.ActivityLogin"
             android:exported="true">
             <intent-filter>

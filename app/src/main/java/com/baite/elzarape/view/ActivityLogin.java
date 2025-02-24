@@ -1,5 +1,6 @@
 package com.baite.elzarape.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,6 +72,8 @@ public class ActivityLogin extends AppCompatActivity {
                     if (success) {
                         showToast("¡Inicio de sesión exitoso!");
                         // Redirigir a otra actividad
+                        Intent intent = new Intent(ActivityLogin.this, ActivityAlimentos.class);
+                        startActivity(intent);
                     } else {
                         showToast("Credenciales incorrectas.");
                     }

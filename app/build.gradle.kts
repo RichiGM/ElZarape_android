@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("androidx.core:core-ktx:1.6.0")
     implementation(files("src\\main\\java\\com\\baite\\elzarape\\libs\\ElZarape_model.jar"))
+    implementation(libs.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -48,7 +48,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Iniciar Sesión"
                 android:textAlignment="center"
-                android:textColor="#FFA724"
+                android:textColor="@color/amarilloZ"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -86,7 +86,7 @@
                 android:layout_width="253dp"
                 android:layout_height="match_parent"
                 android:layout_margin="40dp"
-                android:backgroundTint="#FFA724"
+                android:backgroundTint="@color/amarilloZ"
                 android:text="Entrar"
                 android:textSize="20sp" />
 

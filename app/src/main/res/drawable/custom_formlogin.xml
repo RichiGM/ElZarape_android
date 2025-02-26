@@ -7,7 +7,7 @@
 
     <stroke
         android:width="3dp"
-        android:color="#FFA724"/> <!-- Color del borde -->
+        android:color="@color/amarilloZ"/> <!-- Color del borde -->
 
     <corners
         android:radius="20dp"/> <!-- Esquinas redondeadas -->

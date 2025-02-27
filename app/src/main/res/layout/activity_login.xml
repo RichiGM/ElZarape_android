@@ -8,7 +8,7 @@
     tools:context=".view.ActivityLogin">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imvFotoAlimento"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"

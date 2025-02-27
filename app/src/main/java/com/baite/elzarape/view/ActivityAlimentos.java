@@ -9,6 +9,10 @@ public class ActivityAlimentos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        // ... your code here
+
+    }
+
+    private void mostrarAlimentos(){
+
     }
 }

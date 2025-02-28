@@ -72,7 +72,7 @@ public class ActivityLogin extends AppCompatActivity {
                     if (success) {
                         showToast("¡Inicio de sesión exitoso!");
                         // Redirigir a otra actividad
-                        Intent intent = new Intent(ActivityLogin.this, ActivityAlimentos.class);
+                        Intent intent = new Intent(ActivityLogin.this, ActivityMenu.class);
                         startActivity(intent);
                     } else {
                         showToast("Credenciales incorrectas.");

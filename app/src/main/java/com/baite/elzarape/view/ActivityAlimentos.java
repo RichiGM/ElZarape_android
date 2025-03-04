@@ -61,7 +61,7 @@ public class ActivityAlimentos extends AppCompatActivity {
         String url_str = SERVER_URL + "api/alimento/getall";
 
         // Token de autorización (sin caracteres extraños y con prefijo "Bearer")
-        String token = "1b9ae1cd0f23212c4d7449eef3928f29";
+        String token = "40b51d2b1402e9c465dbe00b8a96f8ab";
 
         // Definimos un Response.Listener donde indicamos qué hacer cuando se haya obtenido la respuesta
         Response.Listener<String> rl = response -> {

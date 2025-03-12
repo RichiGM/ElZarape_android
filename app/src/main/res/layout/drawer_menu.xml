@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/menu_drawer"
@@ -6,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white">
+
     <LinearLayout
         android:id="@+id/headerSection"
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:contentDescription="Logo principal"
             android:layout_marginStart="16dp"/>
     </LinearLayout>
-    <!-- Sección de usuario -->
+
     <LinearLayout
         android:id="@+id/user_section"
         android:layout_width="match_parent"
@@ -37,8 +37,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/user"
-        android:contentDescription="Icono de usuario"
-        android:layout_gravity="center_vertical"/>
+            android:contentDescription="Icono de usuario"
+            android:layout_gravity="center_vertical"/>
 
         <TextView
             android:id="@+id/user_name"
@@ -47,8 +47,8 @@
             android:layout_marginStart="8dp"
             android:layout_gravity="center_vertical"
             android:text="Nombre de Usuario"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"/>
+            android:textSize="16sp"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
 
     <Button
@@ -58,5 +58,5 @@
         android:text="Log Out"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/black"
-    android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"/>
 </LinearLayout>

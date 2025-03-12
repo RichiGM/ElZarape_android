@@ -8,13 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.baite.elzarape.R;
 
-public class ActivityMenu extends AppCompatActivity {
-
+public class ActivityMenu extends BaseActivity {
     LinearLayout llAlimento;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu); // Asegúrate de tener el layout correspondiente
+        setupDrawer(R.layout.activity_menu);
 
         inicializarComponentes();
     }

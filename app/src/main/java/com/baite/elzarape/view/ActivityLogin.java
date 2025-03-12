@@ -1,6 +1,7 @@
 package com.baite.elzarape.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.baite.elzarape.R;
 import com.baite.elzarape.controller.api.ApiClient;
 import com.baite.elzarape.controller.api.ApiServiceLogin;
+import com.baite.elzarape.controller.api.ApiServiceUsuario;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -54,6 +56,10 @@ public class ActivityLogin extends AppCompatActivity {
         String username = txtNombreUsuario.getText().toString();
         String password = txtContraseña.getText().toString();
 
+        if (username.isEmpty() || password.isEmpty()) {
+            showToast("Por favor, completa todos los campos.");
+            return;
+        }
         // Crear el JSON manualmente
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("username", username);
@@ -71,7 +77,7 @@ public class ActivityLogin extends AppCompatActivity {
                     boolean success = loginResponse.get("success").getAsBoolean();
                     if (success) {
                         showToast("¡Inicio de sesión exitoso!");
-                        // Redirigir a otra actividad
+                        checkUser(username);
                         Intent intent = new Intent(ActivityLogin.this, ActivityMenu.class);
                         startActivity(intent);
                     } else {
@@ -91,4 +97,44 @@ public class ActivityLogin extends AppCompatActivity {
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+    private void checkUser (String username) {
+        ApiServiceUsuario apiService = ApiClient.getClient().create(ApiServiceUsuario.class);
+        Call<JsonObject> call = apiService.checkingUser(username);
+
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    JsonObject jsonResponse = response.body();
+                    if (jsonResponse.has("token")) {
+                        String token = jsonResponse.get("token").getAsString();
+
+                        saveUser(username, token);
+
+                        showToast("Token recibido: " + token);
+                    } else if (jsonResponse.has("error")) {
+                        showToast("Error: " + jsonResponse.get("error").getAsString());
+                    }
+                } else {
+                    showToast("Error al obtener el token.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                showToast("Error de conexión: " + t.getMessage());
+            }
+        });
+    }
+
+    private void saveUser (String username, String token) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("username", username);
+        editor.putString("lastToken", token);
+        editor.apply(); // Aplicar los cambios
+    }
+
 }

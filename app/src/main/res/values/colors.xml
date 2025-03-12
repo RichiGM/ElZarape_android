@@ -7,4 +7,5 @@
     <color name="secondary">#Faaf08</color>
     <color name="texto">#FFFFFFFF</color>
     <color name="fondo">#Fef3e2</color>
+    <color name="inactivo">#D3D3D3</color>
 </resources>

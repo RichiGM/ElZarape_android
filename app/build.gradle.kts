@@ -44,6 +44,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("androidx.core:core-ktx:1.6.0")
+    implementation ("com.google.android.material:material:1.11.0")
     implementation(libs.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
